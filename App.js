@@ -23,15 +23,15 @@ export default function App() {
 const styles = StyleSheet.create({
   containter: {
     flex: 1,
-    backgroundColor: "#fff",
-    alignItems: "center",
-    justifyContent: "center",
   },
   image: {
     width: 415,
     height: 950,
-    justifyContent: "center",
-    alignItems: "center",
+    position: "relative",
   },
-  overlayText: {},
+  overlayText: {
+    fontWeight: "bold",
+    color: "white",
+    position: "absolute",
+  },
 });
