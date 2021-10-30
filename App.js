@@ -5,16 +5,27 @@ import {
   View,
   SafeAreaView,
   ImageBackground,
+  Button,
+  TouchableOpacity,
 } from "react-native";
 
 export default function App() {
+  const handlePress = () => {
+    return console.log("here");
+  };
+
   return (
     <SafeAreaView style={styles.containter}>
       <ImageBackground
         style={styles.image}
         source={require("./assets/cover-photo.png")}
       >
-        <Text styles={styles.overlayText}>Hello World how are you!</Text>
+        <TouchableOpacity style={styles.overlayButton} onPress={handlePress}>
+          <Text style={styles.overlayText}>
+            Welcome,
+            {"\n"} let's find you a dog friendly area!
+          </Text>
+        </TouchableOpacity>
       </ImageBackground>
     </SafeAreaView>
   );
@@ -29,9 +40,14 @@ const styles = StyleSheet.create({
     height: 950,
     position: "relative",
   },
+  overlayButton: {
+    position: "relative",
+    top: 25,
+    padding: "12%",
+  },
   overlayText: {
-    fontWeight: "bold",
-    color: "white",
-    position: "absolute",
+    fontSize: 30,
+    color: "#d05a2f",
+    textAlign: "center",
   },
 });
