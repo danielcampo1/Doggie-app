@@ -2,16 +2,15 @@ import React from "react";
 import {
   StyleSheet,
   Text,
-  View,
   SafeAreaView,
   ImageBackground,
-  Button,
   TouchableOpacity,
 } from "react-native";
+import Directory from "./components/directory";
 
 export default function App() {
   const handlePress = () => {
-    return console.log("here");
+    return <Directory />;
   };
 
   return (
@@ -47,7 +46,10 @@ const styles = StyleSheet.create({
   },
   overlayText: {
     fontSize: 30,
-    color: "#d05a2f",
+    color: "#0b0c0f",
     textAlign: "center",
+    borderWidth: 2,
+    backgroundColor: "#e4e6ec",
+    opacity: 0.5,
   },
 });
