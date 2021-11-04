@@ -6,27 +6,31 @@ import {
   ImageBackground,
   TouchableOpacity,
 } from "react-native";
+import { NavigationContainer } from "@react-navigation/native";
+import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import Directory from "./components/directory";
 
-export default function App() {
-  const handlePress = () => {
-    return <Directory />;
-  };
+const Stack = createNativeStackNavigator();
 
+export default function App() {
   return (
-    <SafeAreaView style={styles.containter}>
-      <ImageBackground
-        style={styles.image}
-        source={require("./assets/cover-photo.png")}
-      >
-        <TouchableOpacity style={styles.overlayButton} onPress={handlePress}>
-          <Text style={styles.overlayText}>
-            Welcome,
-            {"\n"} let's find you a dog friendly area!
-          </Text>
-        </TouchableOpacity>
-      </ImageBackground>
-    </SafeAreaView>
+    <NavigationContainer>
+      <Stack.Navigator>
+        <SafeAreaView style={styles.containter}>
+          <ImageBackground
+            style={styles.image}
+            source={require("./assets/cover-photo.png")}
+          >
+            <TouchableOpacity style={styles.overlayButton}>
+              <Text style={styles.overlayText}>
+                Welcome,
+                {"\n"} let's find you a dog friendly area!
+              </Text>
+            </TouchableOpacity>
+          </ImageBackground>
+        </SafeAreaView>
+      </Stack.Navigator>
+    </NavigationContainer>
   );
 }
 
