@@ -12,9 +12,9 @@ import {
 
 function maps() {
   return (
-    <View>
-      <Text>Hello</Text>
-    </View>
+    <SafeAreaView style={styles.container}>
+      <Text>Hello world</Text>
+    </SafeAreaView>
   );
 }
 
