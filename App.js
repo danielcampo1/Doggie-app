@@ -1,4 +1,6 @@
 import * as React from "react";
+import MapView from "react-native-maps";
+import { StatusBar } from "expo-status-bar";
 import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import {
@@ -12,24 +14,28 @@ import {
 
 function maps() {
   return (
-    <SafeAreaView style={styles.container}>
-      <Text>Hello world</Text>
+    <SafeAreaView style={styles.containerMaps}>
+      <MapView
+        style={StyleSheet.absoluteFillObject}
+        provider={MapView.PROVIDER_GOOGLE}
+      ></MapView>
+      <StatusBar style="auto" />
     </SafeAreaView>
   );
 }
 
 function landingPage({ navigation }) {
   return (
-    <SafeAreaView style={styles.containter}>
+    <SafeAreaView style={styles.containterLanding}>
       <ImageBackground
-        style={styles.image}
+        style={styles.imageLanding}
         source={require("./assets/cover-photo.png")}
       >
         <TouchableOpacity
-          style={styles.overlayButton}
+          style={styles.overlayButtonLanding}
           onPress={() => navigation.navigate("maps")}
         >
-          <Text style={styles.overlayText}>
+          <Text style={styles.overlayTextLanding}>
             Welcome,
             {"\n"} let's find you a dog friendly area!
           </Text>
@@ -40,26 +46,32 @@ function landingPage({ navigation }) {
 }
 
 const styles = StyleSheet.create({
-  containter: {
+  containterLanding: {
     flex: 1,
   },
-  image: {
+  imageLanding: {
     width: 415,
     height: 950,
     position: "absolute",
   },
-  overlayButton: {
+  overlayButtonLanding: {
     position: "relative",
     top: 25,
     padding: "12%",
   },
-  overlayText: {
+  overlayTextLanding: {
     fontSize: 30,
     color: "#0b0c0f",
     textAlign: "center",
     borderWidth: 2,
     backgroundColor: "#e4e6ec",
     opacity: 0.5,
+  },
+  containerMaps: {
+    flex: 1,
+    backgroundColor: "#fff",
+    alignItems: "center",
+    justifyContent: "center",
   },
 });
 
