@@ -18,6 +18,12 @@ function maps() {
       <MapView
         style={StyleSheet.absoluteFillObject}
         provider={MapView.PROVIDER_GOOGLE}
+        region={{
+          latitude: 30.2672,
+          longitude: -97.7431,
+          latitudeDelta: 0.09,
+          longitudeDelta: 0.035,
+        }}
       ></MapView>
       <StatusBar style="auto" />
     </SafeAreaView>
